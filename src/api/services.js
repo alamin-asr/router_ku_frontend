@@ -29,12 +29,14 @@ export const eventsApi = {
 // ── Workshops ─────────────────────────────────────────────────────────────────
 export const workshopsApi = {
   getAll: () => api.get('/workshop/getAll-workshop'),
-  getOne: (id) => api.get(`/workshops/${id}`),
+  getOne: (id) => api.get(`/workshop/${id}`),
   create: (data) => api.post('/workshop/create-workshop', data),
-  update: (id, data) => api.put(`/workshops/${id}`, data),
-  delete: (id) => api.delete(`/workshops/${id}`),
-  register: (data) => api.post('/workshops/getAll-workshopRegistered', data),
-  getMyRegistrations: () => api.get('/workshops/my-registrations'),
+  update: (id, data) => api.put(`/workshop/${id}`, data),
+  delete: (id) => api.delete(`/workshop/${id}`),
+  register: (data) => api.post(`/workshop/workshop-reg/${data.workshopId}`, data),
+  getMyRegistrations: () => api.get('/workshop/my-registrations'),
+  getAllRegistered: () => api.get('/workshop/getAll-workshopRegistered'),
+  deleteRegistration: (id) => api.delete(`/workshop/workshop-reg/${id}`),
 };
 
 // ── Competitions ──────────────────────────────────────────────────────────────

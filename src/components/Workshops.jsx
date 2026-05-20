@@ -39,6 +39,8 @@ function RegisterModal({ workshop, onClose, onSuccess }) {
 
                 department: formData.discipline,
 
+                discipline: formData.discipline,
+
             });
 
             setSuccess(true);
@@ -73,8 +75,8 @@ function RegisterModal({ workshop, onClose, onSuccess }) {
                 onClick={e => e.stopPropagation()}
             >
                 <div className="p-5 sm:p-6">
-                <div className="flex justify-between items-center mb-4">
-                    <h3 className="text-lg font-black text-slate-900 dark:text-white uppercase tracking-tight\">Registration</h3>
+                    <div className="flex justify-between items-center mb-4">
+                        <h3 className="text-lg font-black text-slate-900 dark:text-white uppercase tracking-tight\">Registration</h3>
                         <button onClick={onClose} className="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors"><X size={24} /></button>
                     </div>
 
@@ -180,9 +182,9 @@ export default function Workshops() {
 
                         <div className="grid md:grid-cols-2 gap-8">
                             {workshops.map((w, i) => {
-                                const pct = Math.round((w.filled / w.seats) * 100);
+                                const pct = Math.round((w.registered / w.seats) * 100);
                                 const isReg = registered.includes(w.id);
-                                const isFull = w.filled >= w.seats;
+                                const isFull = w.registered >= w.seats;
 
                                 return (
                                     <motion.div
@@ -201,7 +203,7 @@ export default function Workshops() {
                                             </div>
 
                                             <h3 className="text-lg font-black text-slate-900 dark:text-white mb-2 uppercase tracking-tight">{w.title}</h3>
-                                            <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-6 flex-1">{w.desc}</p>
+                                            <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-6 flex-1">{w.description}</p>
 
                                             <div className="grid grid-cols-2 gap-y-3 gap-x-4 mb-6 pt-4 border-t border-slate-100 dark:border-slate-800">
                                                 <div className="flex items-center gap-3">
@@ -222,7 +224,7 @@ export default function Workshops() {
 
                                             <div className="mb-8">
                                                 <div className="flex justify-between items-end mb-2">
-                                                    <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Capacity ({w.filled}/{w.seats})</div>
+                                                    <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Capacity ({w.registered}/{w.seats})</div>
                                                     <div className={`text-xs font-black ${pct > 90 ? 'text-rose-500' : 'text-blue-600'}`}>{pct}%</div>
                                                 </div>
                                                 <div className="h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
@@ -230,7 +232,7 @@ export default function Workshops() {
                                                         initial={{ width: 0 }}
                                                         whileInView={{ width: `${pct}%` }}
                                                         transition={{ duration: 1, delay: 0.5 }}
-                                                        className={`h-full rounded-full ${w.color}`}
+                                                        className={`h-full rounded-full ${w.color || (pct > 90 ? 'bg-rose-500' : pct > 75 ? 'bg-amber-500' : 'bg-blue-600')}`}
                                                     />
                                                 </div>
                                             </div>

@@ -19,7 +19,7 @@ export default function AdminWorkshopRegistrations() {
       setLoading(true);
 
       // ✅ FIX 1: USE CORRECT API (IMPORTANT)
-      const res = await workshopsApi.getAll();
+      const res = await workshopsApi.getAllRegistered();
 
       const data = res.data?.data || res.data;
 
@@ -37,6 +37,7 @@ export default function AdminWorkshopRegistrations() {
   };
 
   const handleDelete = async (id) => {
+    if (!window.confirm("Delete this registration?")) return;
     try {
       await workshopsApi.deleteRegistration(id);
 
@@ -132,7 +133,7 @@ export default function AdminWorkshopRegistrations() {
 
                   {/* ⚠️ IMPORTANT: match backend spelling */}
                   <td className="p-4">
-                    {reg.discipline|| 'N/A'}
+                    {reg.discipline || reg.department || 'N/A'}
                   </td>
 
                   <td className="p-4">{reg.title|| 'N/A'}</td>
