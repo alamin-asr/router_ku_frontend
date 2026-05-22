@@ -174,7 +174,7 @@ export default function AdminWorkshops() {
                     placeholder={f.placeholder || ''}
                     value={form[f.id]}
                     onChange={e => set(f.id, e.target.value)}
-                    className="w-full px-3 py-2.5 text-sm rounded-lg border border-gray-200 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition"
+                    className="w-full px-3 py-2.5 text-sm rounded-lg border border-gray-200 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100"
                   />
                 </div>
               ))}
@@ -184,7 +184,7 @@ export default function AdminWorkshops() {
                 <select
                   value={form.level}
                   onChange={e => set('level', e.target.value)}
-                  className="w-full px-3 py-2.5 text-sm rounded-lg border border-gray-200 focus:outline-none focus:border-blue-500 transition"
+                  className="w-full px-3 py-2.5 text-sm rounded-lg border border-gray-200 focus:outline-none focus:border-blue-500 transition bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100"
                 >
                   {['BEGINNER', 'INTERMEDIATE', 'ADVANCED'].map(l => (
                     <option key={l}>{l}</option>
@@ -198,7 +198,7 @@ export default function AdminWorkshops() {
                   rows={3}
                   value={form.description}
                   onChange={e => set('description', e.target.value)}
-                  className="w-full px-3 py-2.5 text-sm rounded-lg border border-gray-200 focus:outline-none focus:border-blue-500 resize-none transition"
+                  className="w-full px-3 py-2.5 text-sm rounded-lg border border-gray-200 focus:outline-none focus:border-blue-500 resize-none transition bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100"
                 />
               </div>
 

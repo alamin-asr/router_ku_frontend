@@ -11,6 +11,7 @@ const NAV_LINKS = [
   { label: 'Activities', href: '#activities' },
   { label: 'Events', href: '#events' },
   { label: 'Workshops', href: '#workshops' },
+  { label: 'Competitions', href: '#competitions' },
   { label: 'Projects', href: '#projects' },
   { label: 'Team', href: '#team' },
 ];
@@ -53,7 +54,7 @@ function NotificationBell({ scrolled, dark }) {
       const data = res.data?.data || res.data?.content || res.data;
       if (Array.isArray(data)) {
         setItems(data);
-        try { localStorage.setItem('router_announcements', JSON.stringify(data)); } catch {}
+        try { localStorage.setItem('router_announcements', JSON.stringify(data)); } catch { }
       } else {
         throw new Error('Not array');
       }
@@ -66,7 +67,7 @@ function NotificationBell({ scrolled, dark }) {
     try {
       const seen = JSON.parse(localStorage.getItem('router_announcements_seen') || '[]');
       setSeenIds(new Set(seen));
-    } catch {}
+    } catch { }
   };
 
   useEffect(() => {
@@ -77,7 +78,7 @@ function NotificationBell({ scrolled, dark }) {
         if (stored) setItems(JSON.parse(stored));
         const seen = JSON.parse(localStorage.getItem('router_announcements_seen') || '[]');
         setSeenIds(new Set(seen));
-      } catch {}
+      } catch { }
     };
     window.addEventListener('storage', handler);
     return () => window.removeEventListener('storage', handler);

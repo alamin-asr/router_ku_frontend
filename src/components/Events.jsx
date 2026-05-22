@@ -299,11 +299,11 @@ export default function Events() {
 
         {/* Header */}
         <div ref={ref} className={`text-center mb-10 reveal ${visible ? 'visible' : ''}`}>
-          <div className="inline-flex items-center gap-2 bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
-            <span className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
-            Calendar
+          <div className="inline-flex items-center gap-2 bg-blue-500 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
+            {/* <span className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
+            Calendar */}
           </div>
-          <h2 className="section-title-modern">Club Events</h2>
+          <h2 className="section-title-modern">Events</h2>
           <p className="section-subtitle-modern mx-auto">Stay connected with our technical journey through upcoming competitions and workshops.</p>
 
           <div className="inline-flex bg-slate-100 dark:bg-slate-900 rounded-2xl p-1.5 mt-8 border border-slate-200 dark:border-slate-800 shadow-inner">

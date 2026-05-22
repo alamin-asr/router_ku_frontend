@@ -21,9 +21,9 @@ export default function Activities() {
         <div ref={titleRef} className={`text-center mb-10 reveal ${titleVisible ? 'visible' : ''}`}>
           <div className="inline-flex items-center gap-2 bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
             <span className="w-1.5 h-1.5 bg-indigo-500 rounded-full" />
-            Our Expertise
+
           </div>
-          <h2 className="section-title-modern">Technical Domains</h2>
+          <h2 className="section-title-modern">Activities</h2>
           <p className="section-subtitle-modern mx-auto">
             ROUTER operates across six specialized technical pillars, providing members with deep expertise through hands-on learning and competition.
           </p>

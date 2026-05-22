@@ -168,11 +168,11 @@ export default function Team() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div ref={titleRef} className={`text-center mb-24 reveal ${titleVisible ? 'visible' : ''}`}>
-          <div className="inline-flex items-center gap-2 bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
-            <span className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
-            Leadership
+          <div className="inline-flex items-center gap-2 bg-blue-500 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
+            {/* <span className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
+            Leadership */}
           </div>
-          <h2 className="section-title-modern">Technical Board</h2>
+          <h2 className="section-title-modern">Board Members</h2>
           <p className="section-subtitle-modern mx-auto">The visionary minds and dedicated leaders driving the ROUTER mission forward.</p>
         </div>
 

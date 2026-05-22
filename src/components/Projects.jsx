@@ -47,11 +47,11 @@ export default function Projects() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div ref={ref} className={`text-center mb-8 sm:mb-12 reveal ${visible ? 'visible' : ''}`}>
-          <div className="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
-            <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full" />
-            Innovations
+          <div className="inline-flex items-center gap-2 bg-emerald-500 text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
+            {/* <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full" />
+            Innovations */}
           </div>
-          <h2 className="section-title-modern">Technical Portfolio</h2>
+          <h2 className="section-title-modern">Projects</h2>
           <p className="section-subtitle-modern mx-auto">A showcase of student-led initiatives pushing the boundaries of engineering.</p>
         </div>
 

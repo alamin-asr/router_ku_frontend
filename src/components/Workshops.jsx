@@ -166,12 +166,13 @@ export default function Workshops() {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div ref={ref} className={`text-center mb-24 reveal ${visible ? 'visible' : ''}`}>
-                    <div className="inline-flex items-center gap-2 bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
-                        <span className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
-                        Empowerment
+                    <div className="inline-flex items-center gap-2 bg-blue-500 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
+                        {/* <span className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
+                        Empowerment */}
+
                     </div>
-                    <h2 className="section-title-modern">Skill Bootcamps</h2>
-                    <p className="section-subtitle-modern mx-auto">Intensive, hands-on training sessions designed to bridge the gap between theory and practice.</p>
+                    <h2 className="section-title-modern">Workshops</h2>
+                    <p className="section-subtitle-modern mx-auto">Explore our upcoming workshops and register now to secure your spot!</p>
                 </div>
                 {
                     loading ? (
